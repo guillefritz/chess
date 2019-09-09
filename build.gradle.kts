@@ -32,5 +32,9 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = "chess.AppKt"
+    mainClassName = "chess.cmd.AppKt"
+}
+
+val run by tasks.getting(JavaExec::class) {
+    standardInput = System.`in`
 }

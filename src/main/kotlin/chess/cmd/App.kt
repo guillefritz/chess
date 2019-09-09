@@ -3,6 +3,10 @@ package chess.cmd
 import chess.domain.Game
 import chess.domain.MoveResult
 
+class App {
+
+}
+
 fun main(args: Array<String>) {
     println("Welcome to Chess CMD!")
 
