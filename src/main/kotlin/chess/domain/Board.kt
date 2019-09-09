@@ -30,12 +30,12 @@ class Board {
         }
 
         val subarray = Array<Piece?>(8) { null }
-        subarray.fill(Pawn(Colour.WHITE), 0, 7)
+        subarray.fill(Pawn(Colour.WHITE), 0, 8)
         board[1] = subarray
         board[0] = arrayOf(Tower(Colour.WHITE), Knight(Colour.WHITE), Bishop(Colour.WHITE), King(Colour.WHITE), Queen(Colour.WHITE), Bishop(Colour.WHITE), Knight(Colour.WHITE), Tower(Colour.WHITE))
 
         val subarrayB = Array<Piece?>(8) { null }
-        subarrayB.fill(Pawn(Colour.BLACK), 0, 7)
+        subarrayB.fill(Pawn(Colour.BLACK), 0, 8)
         board[6] = subarrayB
         board[7] = arrayOf(Tower(Colour.BLACK), Knight(Colour.BLACK), Bishop(Colour.BLACK), King(Colour.BLACK), Queen(Colour.BLACK), Bishop(Colour.BLACK), Knight(Colour.BLACK), Tower(Colour.BLACK))
 

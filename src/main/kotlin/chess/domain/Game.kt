@@ -2,7 +2,7 @@ package chess.domain
 
 class Game {
 
-    val board = Board()
+    open val board = Board()
     var colourToPlay = Colour.WHITE
 
     init {

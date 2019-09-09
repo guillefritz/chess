@@ -24,6 +24,10 @@ data class Pawn(override val colour: Colour) : Piece(colour) {
             else -> false
         }
     }
+
+    override fun toString(): String {
+        return "P(${colour.name[0]})"
+    }
 }
 
 data class Tower(override val colour: Colour) : Piece(colour) {
@@ -41,6 +45,9 @@ data class Tower(override val colour: Colour) : Piece(colour) {
         }
 
     }
+    override fun toString(): String {
+        return "T(${colour.name[0]})"
+    }
 }
 
 data class King(override val colour: Colour) : Piece(colour) {
@@ -57,6 +64,9 @@ data class King(override val colour: Colour) : Piece(colour) {
             else -> false
         }
     }
+    override fun toString(): String {
+        return "K(${colour.name[0]})"
+    }
 }
 
 data class Bishop(override val colour: Colour) : Piece(colour) {
@@ -70,11 +80,17 @@ data class Bishop(override val colour: Colour) : Piece(colour) {
             else -> false
         }
     }
+    override fun toString(): String {
+        return "B(${colour.name[0]})"
+    }
 }
 
 data class Queen(override val colour: Colour) : Piece(colour) {
     override fun canMove(x: Int, y: Int, toX: Int, toY: Int): Boolean {
         return Bishop(colour).canMove(x, y, toX, toY) || Tower(colour).canMove(x, y, toX, toY)
+    }
+    override fun toString(): String {
+        return "Q(${colour.name[0]})"
     }
 }
 
@@ -95,6 +111,9 @@ data class Knight(override val colour: Colour) : Piece(colour) {
 
             else -> false
         }
+    }
+    override fun toString(): String {
+        return "H(${colour.name[0]})"
     }
 }
 
