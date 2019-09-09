@@ -17,9 +17,13 @@ class Game {
             return MoveResult.InvalidColourMove
         }
 
-        return board.move(x, y, toX, toY).also {
+        val moveResult = board.move(x, y, toX, toY)
+
+        if(moveResult !in arrayOf(MoveResult.InvalidMove, MoveResult.InvalidColourMove)) {
             colourToPlay = if (colourToPlay == Colour.WHITE) Colour.BLACK else Colour.WHITE
         }
+
+        return moveResult
     }
 
 }

@@ -1,6 +1,7 @@
 package chess.cmd
 
 import chess.domain.Game
+import chess.domain.MoveResult
 
 fun main(args: Array<String>) {
     println("Welcome to Chess CMD!")
@@ -12,12 +13,22 @@ fun main(args: Array<String>) {
         val stringInput = readLine()!!
         val splitted = stringInput.split(",")
 
-        var x = splitted[0].toInt()
-        var y = splitted[1].toInt()
-        var toX = splitted[2].toInt()
-        var toY = splitted[3].toInt()
+        var x = splitted[0].toIntOrNull() ?:-1
+        var y = splitted[1].toIntOrNull() ?:-1
+        var toX = splitted[2].toIntOrNull() ?:-1
+        var toY = splitted[3].toIntOrNull() ?:-1
 
-        game.move(x, y, toX, toY)
+        val m = game.move(x, y, toX, toY)
+
+        val moveStr = when(m) {
+            MoveResult.KingEatenMove -> "king eaten!"
+            MoveResult.InvalidColourMove,MoveResult.InvalidMove -> "bad move, try again!"
+            else -> ""
+        }
+
+        println(" move: $moveStr")
+        println("------------------------------------------------")
+
     }
 }
 
